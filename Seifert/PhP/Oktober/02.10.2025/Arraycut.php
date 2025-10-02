@@ -20,6 +20,25 @@ function specificoutput($array, $indexes) {
     }
 }
 
+function lengthfilter($array, $length) {
+    $newArray = [];
+    foreach ($array as $key) {
+        if (strlen($key) >= $length) {
+            $newArray[] = $key;
+        }
+    }
+    return $newArray;
+}
+
+function lengthremover($array, $length) {
+    foreach ($array as $key) {
+        if (strlen($key) >= $length) {
+            unset($array[$key]);
+        }
+    }
+    return array_values($array);
+}
+
 $long = 20;
 $testarray = [];
 for ($continue=0; $continue <= $long-1; $continue++) { 
